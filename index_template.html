@@ -20,7 +20,7 @@
       </select>
       <button id="backBtn" onclick="_onBack()"> < </button> 
       <button id="forwBtn" onclick="_onForw()" > > </button>
-      <button id="clearBtn" onclick="_onClear()"> clear </button>
+      <button id="newBtn" onclick="_onNew()"> new </button>
       <input type="text" id="pastehistBox"  value="" />
       <button id="pastehistBtn"  onclick="_onLoad()"> load</button>
       <button id="startBtn" onclick="_onStart()"> start </button>
@@ -32,10 +32,10 @@
     <script type='text/javascript'>
       var Module = {
         canvas: (function() { return document.getElementById('canvas'); })() ,
-        bsize: (function() { return document.getElementById('bsize'); })() ,
+        repcolor: (function() { return document.getElementById('repcolor'); })() ,
         backBtn: (function() { return document.getElementById('backBtn'); })() ,
         forwBtn: (function() { return document.getElementById('forwBtn'); })() ,
-        clearBtn: (function() { return document.getElementById('clearBtn'); })() ,
+        newBtn: (function() { return document.getElementById('newBtn'); })() ,
         pastehistBtn: (function() { return document.getElementById('pastehistBtn'); })() ,
         pastehistBox: (function() { return document.getElementById('pastehistBox'); })() ,
         startBtn: (function() { return document.getElementById('startBtn'); })(),
