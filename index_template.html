@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINR</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <canvas id="canvas" width=200, height=200>
+      <p>Add suitable fallback here.</p>
+    </canvas>
+
+    
+    <div class="toolbar">
+      <select name="bsize" id="bsize">
+        <option value="6x7"> 6x7 </option>
+        <option value="8x8"> 8x8 </option>
+        <option value="9x9" selected="selected"> 9x9 </option>
+        <option value="10x10"> 10x10 </option>
+      </select>
+      <button id="backBtn" onclick="_onBack()"> < </button> 
+      <button id="forwBtn" onclick="_onForw()" > > </button>
+      <button id="clearBtn" onclick="_onClear()"> clear </button>
+      <input type="text" id="pastehistBox"  value="" />
+      <button id="pastehistBtn"  onclick="_onLoad()"> load</button>
+      <button id="startBtn" onclick="_onStart()"> start </button>
+      <button id="reportBtn" onclick="_onReport()"> report </button>
+    </div>
+
+    <a href="html/report.html">Report</div>
+
+    <script type='text/javascript'>
+      var Module = {
+        canvas: (function() { return document.getElementById('canvas'); })() ,
+        bsize: (function() { return document.getElementById('bsize'); })() ,
+        backBtn: (function() { return document.getElementById('backBtn'); })() ,
+        forwBtn: (function() { return document.getElementById('forwBtn'); })() ,
+        clearBtn: (function() { return document.getElementById('clearBtn'); })() ,
+        pastehistBtn: (function() { return document.getElementById('pastehistBtn'); })() ,
+        pastehistBox: (function() { return document.getElementById('pastehistBox'); })() ,
+        startBtn: (function() { return document.getElementById('startBtn'); })(),
+        reportBtn: (function() { return document.getElementById('reportBtn'); })()
+          
+        };
+    </script>
+
+    {{{ SCRIPT }}}
+    
+  </body>
+</html>
