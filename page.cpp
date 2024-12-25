@@ -22,7 +22,7 @@ void onLoad(){ }
 
 void onStart(){}
 
-)
+}
 
 int main (){
 
