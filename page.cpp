@@ -2,6 +2,7 @@
 #include <emscripten/html5.h>
 #include <vector>
 #include <stdio.h>
+#include "nmc.hpp"
 
 
 // javascript functions
