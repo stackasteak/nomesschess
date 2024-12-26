@@ -1023,7 +1023,8 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
 }
 var wasmImports = {
-  
+  /** @export */
+  drawboard
 };
 var wasmExports;
 createWasm();
