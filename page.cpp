@@ -10,7 +10,7 @@ EM_JS(void, alert_float, (float x), {
   alert(x);
 });
 
-EM_JS(void, redraw, (),{
+EM_JS(void, drawboard, (),{
   let context = Module.canvas.getContext('2d');
   drawing = new Image();
   drawing.src = "assets/Chess_bdt45.svg"; // can also be a remote URL e.g. http://
