@@ -12,11 +12,11 @@ EM_JS(void, alert_float, (float x), {
 
 EM_JS(void, redraw, (),{
 
-drawing = new Image();
-drawing.src = "draw.png"; // can also be a remote URL e.g. http://
-drawing.onload = function() {
-   context.drawImage(drawing,0,0);
-};
+  drawing = new Image();
+  drawing.src = "assets/Chess_bdt45.svg"; // can also be a remote URL e.g. http://
+  drawing.onload = function() {
+    context.drawImage(drawing,0,0); 
+  };
 
 });
 
