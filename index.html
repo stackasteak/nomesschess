@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINR</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <canvas id="canvas" width=200, height=200>
+      <p>Add suitable fallback here.</p>
+    </canvas>
+
+    
+    <div class="toolbar">
+      <select name="repcolor" id="repcolor">
+        <option value="white" selected="selected"> 9x9 </option>
+        <option value="black"> black </option>
+      </select>
+      <button id="backBtn" onclick="_onBack()"> < </button> 
+      <button id="forwBtn" onclick="_onForw()" > > </button>
+      <button id="newBtn" onclick="_onNew()"> new </button>
+      <input type="text" id="pastehistBox"  value="" />
+      <button id="pastehistBtn"  onclick="_onLoad()"> load</button>
+      <button id="startBtn" onclick="_onStart()"> start </button>
+      <button id="reportBtn" onclick="_onReport()"> report </button>
+    </div>
+
+    <a href="html/report.html">Report</div>
+
+    <script type='text/javascript'>
+      var Module = {
+        canvas: (function() { return document.getElementById('canvas'); })() ,
+        repcolor: (function() { return document.getElementById('repcolor'); })() ,
+        backBtn: (function() { return document.getElementById('backBtn'); })() ,
+        forwBtn: (function() { return document.getElementById('forwBtn'); })() ,
+        newBtn: (function() { return document.getElementById('newBtn'); })() ,
+        pastehistBtn: (function() { return document.getElementById('pastehistBtn'); })() ,
+        pastehistBox: (function() { return document.getElementById('pastehistBox'); })() ,
+        startBtn: (function() { return document.getElementById('startBtn'); })(),
+        reportBtn: (function() { return document.getElementById('reportBtn'); })()
+          
+        };
+    </script>
+
+    <script async type="text/javascript" src="index.js"></script>
+    
+  </body>
+</html>
