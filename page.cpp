@@ -46,6 +46,7 @@ int main (){
   //  );
 
   //emscripten_set_main_loop_arg(mainloop, static_cast<void*>(&as), 1, false);
-  
+
+  drawboard();
   return 0;
 }
