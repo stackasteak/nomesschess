@@ -3,6 +3,9 @@
 #include <vector>
 #include <stdio.h>
 #include "nmc/nmc.hpp"
+#include "nmc/chess.hpp"
+
+using namespace chess;
 
 
 // javascript functions
