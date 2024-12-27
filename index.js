@@ -891,7 +891,7 @@ function dbg(...args) {
 // === Body ===
 
 function alert_float(x) { alert(x); }
-function drawboard() { let context = Module.canvas.getContext('2d'); let width = Module.canvas.width = window.innerWidth; let height = Module.canvas.height = window.innerWidth+30; context.fillStyle = 'rgb(0,0,0)'; context.fillRect(0,0,width,height); drawing = new Image(); drawing.src = "assets/Chess_bdt45.svg"; drawing.onload = function() { context.drawImage(drawing,0,0); }; }
+function drawboard() { let context = Module.canvas.getContext('2d'); let width = Module.canvas.width = window.innerWidth; let height = Module.canvas.height = window.innerWidth+30; context.fillStyle = 'rgb(0,0,0)'; context.fillRect(0,0,width,height); let sqsize = width/8; for(let ii=0; ii<8; ii++){ for(let jj=0; jj<8; jj++){ if ((ii*jj)%2==0 ) { context.fillStyle = 'rgb(10,20,20)'; } else{ context.fillStyle = 'rgb(30,30,10)'; } context.fillRect(ii*sqsize,jj*sqsize,(ii+1)*sqsize,(jj+1)*sqsize); } } drawing = new Image(); drawing.src = "assets/Chess_bdt45.svg"; drawing.onload = function() { context.drawImage(drawing,0,0); }; }
 
 // end include: preamble.js
 
