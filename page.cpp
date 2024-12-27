@@ -13,6 +13,12 @@ EM_JS(void, alert_float, (float x), {
 
 EM_JS(void, drawboard, (),{
   let context = Module.canvas.getContext('2d');
+
+  let width = Module.canvas.width = window.innerWidth;
+  let height = Module.canvas.height = window.innerWidth+30;
+  context.fillStyle = 'rgb(0,0,0)';
+  context.fillRect(0,0,width,height);
+  
   drawing = new Image();
   drawing.src = "assets/Chess_bdt45.svg"; // can also be a remote URL e.g. http://
   drawing.onload = function() {
