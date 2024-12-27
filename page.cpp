@@ -19,19 +19,20 @@ EM_JS(void, drawboard, (),{
   context.fillStyle = 'rgb(0,0,0)';
   context.fillRect(0,0,width,height);
 
-  /* let sqsize = width/8;
+  let sqsize = width/8;
 
   for(let ii=0; ii<8; ii++){
     for(let jj=0; jj<8; jj++){
       if ((ii*jj)%2==0 ) {
         context.fillStyle = 'rgb(10,20,20)';
+      }
       else{
         context.fillStyle = 'rgb(30,30,10)';   
       }
       context.fillRect(ii*sqsize,jj*sqsize,(ii+1)*sqsize,(jj+1)*sqsize);
     }
   }
-*/
+
   
   drawing = new Image();
   drawing.src = "assets/Chess_bdt45.svg"; // can also be a remote URL e.g. http://
