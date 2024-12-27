@@ -23,7 +23,7 @@ EM_JS(void, drawboard, (),{
 
   for(let ii=0; ii<8; ii++){
     for(let jj=0; jj<8; jj++){
-      if ((ii*jj)%2==0 ) {
+      if ((ii+jj)%2==0 ) {
         context.fillStyle = 'rgb(10,80,80)';
       }
       else{
