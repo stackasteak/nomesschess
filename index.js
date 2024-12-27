@@ -891,7 +891,7 @@ function dbg(...args) {
 // === Body ===
 
 function alert_float(x) { alert(x); }
-function drawboard() { let context = Module.canvas.getContext('2d'); drawing = new Image(); drawing.src = "assets/Chess_bdt45.svg"; drawing.onload = function() { context.drawImage(drawing,0,0); }; }
+function drawboard() { let context = Module.canvas.getContext('2d'); let width = Module.canvas.width = window.innerWidth; let height = Module.canvas.height = window.innerWidth+30; context.fillStyle = 'rgb(0,0,0)'; context.fillRect(0,0,width,height); drawing = new Image(); drawing.src = "assets/Chess_bdt45.svg"; drawing.onload = function() { context.drawImage(drawing,0,0); }; }
 
 // end include: preamble.js
 
