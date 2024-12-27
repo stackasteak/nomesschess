@@ -29,7 +29,7 @@ EM_JS(void, drawboard, (),{
       else{
         context.fillStyle = 'rgb(30,30,10)';   
       }
-      context.fillRect(ii*sqsize,jj*sqsize,(ii+1)*sqsize,(jj+1)*sqsize);
+      context.fillRect(ii*sqsize,jj*sqsize,sqsize,sqsize);
     }
   }
 
