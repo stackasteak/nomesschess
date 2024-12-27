@@ -24,10 +24,10 @@ EM_JS(void, drawboard, (),{
   for(let ii=0; ii<8; ii++){
     for(let jj=0; jj<8; jj++){
       if ((ii+jj)%2==0 ) {
-        context.fillStyle = 'rgb(10,80,80)';
+        context.fillStyle = 'rgb(204,165,31)';
       }
       else{
-        context.fillStyle = 'rgb(80,80,10)';   
+        context.fillStyle = 'rgb(237,190,31)';   
       }
       context.fillRect(ii*sqsize,jj*sqsize,sqsize,sqsize);
     }
