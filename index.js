@@ -891,7 +891,7 @@ function dbg(...args) {
 // === Body ===
 
 function alert_float(x) { alert(x); }
-function drawboard() { let context = Module.canvas.getContext('2d'); let width = Module.canvas.width = window.innerWidth; let height = Module.canvas.height = window.innerWidth+30; context.fillStyle = 'rgb(0,0,0)'; context.fillRect(0,0,width,height); let sqsize = width/8; for(let ii=0; ii<8; ii++){ for(let jj=0; jj<8; jj++){ if ((ii+jj)%2==0 ) { context.fillStyle = 'rgb(214,155,39)'; } else{ context.fillStyle = 'rgb(135,109,19)'; } context.fillRect(ii*sqsize,jj*sqsize,sqsize,sqsize); } } drawing = new Image(); drawing.src = "assets/Chess_bdt45.svg"; drawing.onload = function() { context.drawImage(drawing,0,0); }; }
+function draw_blankboard() { let context = Module.canvas.getContext('2d'); let width = Module.canvas.width = window.innerWidth; let height = Module.canvas.height = window.innerWidth+30; context.fillStyle = 'rgb(0,0,0)'; context.fillRect(0,0,width,height); let sqsize = width/8; for(let ii=0; ii<8; ii++){ for(let jj=0; jj<8; jj++){ if ((ii+jj)%2==0 ) { context.fillStyle = 'rgb(214,155,39)'; } else{ context.fillStyle = 'rgb(135,109,19)'; } context.fillRect(ii*sqsize,jj*sqsize,sqsize,sqsize); } } drawing = new Image(); drawing.src = "assets/Chess_bdt45.svg"; drawing.onload = function() { context.drawImage(drawing,0,0); }; }
 
 // end include: preamble.js
 
@@ -1261,7 +1261,7 @@ var wasmImports = {
   /** @export */
   _emscripten_memcpy_js: __emscripten_memcpy_js,
   /** @export */
-  drawboard,
+  draw_blankboard,
   /** @export */
   emscripten_resize_heap: _emscripten_resize_heap,
   /** @export */
