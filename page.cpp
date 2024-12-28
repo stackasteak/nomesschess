@@ -38,52 +38,12 @@ EM_JS(void, draw_blankboard, (),{
 
 });
 
-EM_JS(void, draw_piece, (string pp, int x, int y), {
+EM_JS(void, draw_piece, (string piecepath, int x, int y), {
   let context = Module.canvas.getContext('2d');
   let width = Module.canvas.width = window.innerWidth;
 
   drawing = new Image();
-
-  switch (pp) {
-    case 'bp':
-      drawing.src = "assets/Chess_bp.svg"; // can also be a remote URL e.g. http://
-      break;
-    case 'bb':
-      drawing.src = "assets/Chess_bb.svg";
-      break;
-    case 'bn':
-      drawing.src = "assets/Chess_bn.svg";
-      break;
-    case 'br':
-      drawing.src = "assets/Chess_br.svg";
-      break;
-    case 'bq':
-      drawing.src = "assets/Chess_bq.svg";
-      break;
-    case 'bk':
-      drawing.src = "assets/Chess_bk.svg";
-      break;
-    case 'wp':
-      drawing.src = "assets/Chess_wp.svg"; // can also be a remote URL e.g. http://
-      break;
-    case 'wb':
-      drawing.src = "assets/Chess_wb.svg";
-      break;
-    case 'wn':
-      drawing.src = "assets/Chess_wn.svg";
-      break;
-    case 'wr':
-      drawing.src = "assets/Chess_wr.svg";
-      break;
-    case 'wq':
-      drawing.src = "assets/Chess_wq.svg";
-      break;
-    case 'wk':
-      drawing.src = "assets/Chess_wk.svg";
-      break;
-  }
-      
-      
+  drawing.src = piecepath;
   drawing.onload = function() {
     context.drawImage(drawing,x*width,y*width,width,width); 
   };
