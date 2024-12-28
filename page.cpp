@@ -36,17 +36,23 @@ EM_JS(void, draw_blankboard, (),{
     }
   }
 
-  
-  
-
 });
 
 EM_JS(void, draw_piece, (string pp, int x, int y), {
   let context = Module.canvas.getContext('2d');
 
   drawing = new Image();
-  drawing.src = "assets/Chess_bdt45.svg"; // can also be a remote URL e.g. http://
-  drawing.onload = function() {
+
+  switch (pp) {
+    case 'bp':
+      drawing.src = "assets/Chess_bp.svg"; // can also be a remote URL e.g. http://
+      break;
+    case 'bb':
+      drawing.src = "assets/Chess_bdt45.svg";
+      break;
+      
+      
+      drawing.onload = function() {
     context.drawImage(drawing,0,0); 
   };
 });
