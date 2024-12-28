@@ -89,6 +89,17 @@ EM_JS(void, draw_piece, (string pp, int x, int y), {
   };
 });
 
+void draw_board(Board bb){
+  draw_blankboard();
+  for(int x=0; x<8; x++){
+    for(int y=0; y<8; y++){
+      auto sq = Square(File(x), Rank(7-y));
+
+    }
+  }
+
+}
+
 extern "C"{
 
 void onBack(){ }
