@@ -14,7 +14,7 @@ EM_JS(void, alert_float, (float x), {
   alert(x);
 });
 
-EM_JS(void, drawboard, (),{
+EM_JS(void, draw_blankboard, (),{
   let context = Module.canvas.getContext('2d');
 
   let width = Module.canvas.width = window.innerWidth;
@@ -72,6 +72,6 @@ int main (){
 
   //emscripten_set_main_loop_arg(mainloop, static_cast<void*>(&as), 1, false);
 
-  drawboard();
+  draw_blankboard();
   return 0;
 }
