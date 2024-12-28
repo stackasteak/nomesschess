@@ -55,6 +55,12 @@ void draw_board(Board bb){
     for(int y=0; y<8; y++){
       auto sq = Square(File(x), Rank(7-y));
 
+      switch(bb.at(sq)){
+        case Piece::WHITEPAWN :
+          draw_piece("assets/Chess_wp.svg", x, y);
+
+      }
+        
     }
   }
 
