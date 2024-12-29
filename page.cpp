@@ -94,7 +94,7 @@ void draw_board(Board bb){
     for(int y=0; y<8; y++){
       auto sq = Square(File(x), Rank(7-y));
 
-      switch(bb.at<Piece>(sq)){
+      switch(bb.at<Piece>(sq).internal()){
         case Piece::WHITEPAWN :
           draw_piece(1, x, y);
           break;
