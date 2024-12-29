@@ -96,7 +96,7 @@ void draw_board(Board bb){
 
       switch(bb.at(sq)){
         case Piece::WHITEPAWN :
-          draw_piece("assets/Chess_wp.svg", x, y);
+          draw_piece(1, x, y);
           break;
 
       }
