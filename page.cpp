@@ -83,9 +83,9 @@ EM_JS(void, draw_piece, (int pp, int x, int y), {
       break;
   }
       
-  drawing.onload = function() {
-    context.drawImage(drawing,x*sqsize,y*sqsize,sqsize,sqsize); 
-  };
+  //drawing.onload = function() {
+  context.drawImage(drawing,x*sqsize,y*sqsize,sqsize,sqsize); 
+  //};
 });
 
 void draw_board(Board bb){
