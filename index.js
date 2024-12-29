@@ -1264,6 +1264,8 @@ var wasmImports = {
   /** @export */
   draw_blankboard,
   /** @export */
+  draw_piece,
+  /** @export */
   emscripten_resize_heap: _emscripten_resize_heap,
   /** @export */
   fd_close: _fd_close,
