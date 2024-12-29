@@ -84,7 +84,7 @@ EM_JS(void, draw_piece, (int pp, int x, int y), {
   }
       
   drawing.onload = function() {
-    context.drawImage(drawing,x*sqsize,y*sqsizw,sqsize,sqsize); 
+    context.drawImage(drawing,x*sqsize,y*sqsize,sqsize,sqsize); 
   };
 });
 
