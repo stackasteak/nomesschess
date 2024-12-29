@@ -41,7 +41,7 @@ EM_JS(void, draw_blankboard, (),{
 EM_JS(void, draw_piece, (int pp, int x, int y), {
   let context = Module.canvas.getContext('2d');
   let width = Module.canvas.width = window.innerWidth;
-
+  let sqsize = width/8;
   drawing = new Image();
 
   switch(pp){
@@ -84,7 +84,7 @@ EM_JS(void, draw_piece, (int pp, int x, int y), {
   }
       
   drawing.onload = function() {
-    context.drawImage(drawing,x*width,y*width,width,width); 
+    context.drawImage(drawing,x*sqsize,y*sqsizw,sqsize,sqsize); 
   };
 });
 
