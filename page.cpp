@@ -38,12 +38,51 @@ EM_JS(void, draw_blankboard, (),{
 
 });
 
-EM_JS(void, draw_piece, (string piecepath, int x, int y), {
+EM_JS(void, draw_piece, (int pp, int x, int y), {
   let context = Module.canvas.getContext('2d');
   let width = Module.canvas.width = window.innerWidth;
 
   drawing = new Image();
-  drawing.src = piecepath;
+
+  switch(pp){
+    case 1:
+      drawing.src = "assets/Chess_wp.svg";
+      break;
+    case 2:
+      drawing.src = "assets/Chess_wn.svg";
+      break;
+    case 3:
+      drawing.src = "assets/Chess_wb.svg";
+      break;
+    case 4:
+      drawing.src = "assets/Chess_wr.svg";
+      break;
+    case 5:
+      drawing.src = "assets/Chess_wq.svg";
+      break;
+    case 6:
+      drawing.src = "assets/Chess_wk.svg";
+      break;
+    case 7:
+      drawing.src = "assets/Chess_bp.svg";
+      break;
+    case 8:
+      drawing.src = "assets/Chess_bn.svg";
+      break;
+    case 9:
+      drawing.src = "assets/Chess_bb.svg";
+      break;
+    case 10:
+      drawing.src = "assets/Chess_br.svg";
+      break;
+    case 11:
+      drawing.src = "assets/Chess_bq.svg";
+      break;
+    case 12:
+      drawing.src = "assets/Chess_bk.svg";
+      break;
+  }
+      
   drawing.onload = function() {
     context.drawImage(drawing,x*width,y*width,width,width); 
   };
