@@ -98,6 +98,39 @@ void draw_board(Board bb){
         case Piece::WHITEPAWN :
           draw_piece(1, x, y);
           break;
+        case Piece::WHITEKNIGHT :
+          draw_piece(2, x, y);
+          break;
+        case Piece::WHITEBISHOP :
+          draw_piece(3, x, y);
+          break;
+        case Piece::WHITEROOK :
+          draw_piece(4, x, y);
+          break;
+        case Piece::WHITEQUEEN :
+          draw_piece(5, x, y);
+          break;
+        case Piece::WHITEKING :
+          draw_piece(6, x, y);
+          break;
+        case Piece::BLACKPAWN :
+          draw_piece(7, x, y);
+          break;
+        case Piece::BLACKKNIGHT :
+          draw_piece(8, x, y);
+          break;
+        case Piece::BLACKBISHOP :
+          draw_piece(9, x, y);
+          break;
+        case Piece::BLACKROOK :
+          draw_piece(10, x, y);
+          break;
+        case Piece::BLACKQUEEN :
+          draw_piece(11, x, y);
+          break;
+        case Piece::BLACKKING :
+          draw_piece(12, x, y);
+          break;
 
       }
         
