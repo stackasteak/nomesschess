@@ -42,7 +42,7 @@ EM_JS(void, draw_piece, (int pp, int x, int y), {
   let context = Module.canvas.getContext('2d');
   let width = Module.canvas.width = window.innerWidth;
   let sqsize = width/8;
-  drawing = new Image();
+  var drawing = new Image();
 
   switch(pp){
     case 1:
