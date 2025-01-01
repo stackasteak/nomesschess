@@ -145,7 +145,11 @@ void onBack(){ }
 
 void onForw(){ }
 
-void onNew(){ }
+void onNew(){ 
+  draw_blankboard();
+  Board bb("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+  draw_board(bb);
+}
 
 void onLoad(){ }
 
