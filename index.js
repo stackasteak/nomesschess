@@ -1273,7 +1273,9 @@ var wasmImports = {
   /** @export */
   fd_seek: _fd_seek,
   /** @export */
-  fd_write: _fd_write
+  fd_write: _fd_write,
+  /** @export */
+  preload_pieces
 };
 var wasmExports;
 createWasm();
