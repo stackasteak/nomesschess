@@ -15,7 +15,7 @@ EM_JS(void, alert_float, (float x), {
 });
 
 EM_JS(void, preload_pieces, (), {
-  piece_imgs=[];
+  
   var wp = new Image();
   wp.src = "assets/Chess_wp.svg";
 
@@ -35,22 +35,24 @@ EM_JS(void, preload_pieces, (), {
   wk.src = "assets/Chess_wk.svg";
 
   var bp = new Image();
-  wp.src = "assets/Chess_wp.svg";
+  bp.src = "assets/Chess_bp.svg";
 
-  var wn = new Image();
-  wn.src = "assets/Chess_wn.svg";
+  var bn = new Image();
+  bn.src = "assets/Chess_bn.svg";
 
-  var wb = new Image();
-  wb.src = "assets/Chess_wb.svg";
+  var bb = new Image();
+  bb.src = "assets/Chess_bb.svg";
 
-  var wr = new Image();
-  wr.src = "assets/Chess_wr.svg";
+  var br = new Image();
+  br.src = "assets/Chess_br.svg";
 
-  var wq = new Image();
-  wq.src = "assets/Chess_wq.svg";
+  var bq = new Image();
+  bq.src = "assets/Chess_bq.svg";
   
-  var wk = new Image();
-  wk.src = "assets/Chess_wk.svg";
+  var bk = new Image();
+  bk.src = "assets/Chess_bk.svg";
+
+  piece_imgs=[wp, wn, wb, wr, wq, wk, bp, bn, bb, br, bq, bk];
 });
 
 EM_JS(void, draw_blankboard, (),{
