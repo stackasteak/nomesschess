@@ -14,6 +14,12 @@ EM_JS(void, alert_float, (float x), {
   alert(x);
 });
 
+EM_JS(void, preload_pieces, (), {
+  piece_imgs=[];
+  var wp = new Image();
+  drawing_wp.src = "assets/Chess_wp.svg";
+});
+
 EM_JS(void, draw_blankboard, (),{
   let context = Module.canvas.getContext('2d');
 
