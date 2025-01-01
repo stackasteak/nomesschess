@@ -17,7 +17,40 @@ EM_JS(void, alert_float, (float x), {
 EM_JS(void, preload_pieces, (), {
   piece_imgs=[];
   var wp = new Image();
-  drawing_wp.src = "assets/Chess_wp.svg";
+  wp.src = "assets/Chess_wp.svg";
+
+  var wn = new Image();
+  wn.src = "assets/Chess_wn.svg";
+
+  var wb = new Image();
+  wb.src = "assets/Chess_wb.svg";
+
+  var wr = new Image();
+  wr.src = "assets/Chess_wr.svg";
+
+  var wq = new Image();
+  wq.src = "assets/Chess_wq.svg";
+  
+  var wk = new Image();
+  wk.src = "assets/Chess_wk.svg";
+
+  var bp = new Image();
+  wp.src = "assets/Chess_wp.svg";
+
+  var wn = new Image();
+  wn.src = "assets/Chess_wn.svg";
+
+  var wb = new Image();
+  wb.src = "assets/Chess_wb.svg";
+
+  var wr = new Image();
+  wr.src = "assets/Chess_wr.svg";
+
+  var wq = new Image();
+  wq.src = "assets/Chess_wq.svg";
+  
+  var wk = new Image();
+  wk.src = "assets/Chess_wk.svg";
 });
 
 EM_JS(void, draw_blankboard, (),{
