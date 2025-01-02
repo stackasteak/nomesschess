@@ -52,7 +52,7 @@ EM_JS(void, preload_pieces, (), {
   var bk = new Image();
   bk.src = "assets/Chess_bk.svg";
 
-  //piece_imgs=[wp, wn, wb, wr, wq, wk, bp, bn, bb, br, bq, bk];
+  var piece_imgs=[wp, wn, wb, wr, wq, wk, bp, bn, bb, br, bq, bk];
 });
 
 EM_JS(void, draw_blankboard, (),{
