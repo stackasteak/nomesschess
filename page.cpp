@@ -122,6 +122,17 @@ struct global_data{
     moving=false;
   };
 
+int iselect(float x){
+    int ans=8;
+    for(int ii=0; ii<8; ii++){
+      if(x < (ii+1)*stonesize){
+        ans = ii;
+        break;
+      }
+    }
+   return ans;
+  }
+
 };
 
 global_data gd;
@@ -134,7 +145,9 @@ EM_BOOL touchend_callback(
     void *ud
 ) {
     global_data* userData = static_cast<global_data*>(ud);
+    int ii = userData->dsp->iselect(event->touches[0].clientX);
 
+  
     return EM_TRUE;
 }
 
