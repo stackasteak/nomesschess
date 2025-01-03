@@ -14,46 +14,6 @@ EM_JS(void, alert_float, (float x), {
   alert(x);
 });
 
-EM_JS(void, preload_pieces, (), {
-  
-  var wp = new Image();
-  wp.src = "assets/Chess_wp.svg";
-
-  var wn = new Image();
-  wn.src = "assets/Chess_wn.svg";
-
-  var wb = new Image();
-  wb.src = "assets/Chess_wb.svg";
-
-  var wr = new Image();
-  wr.src = "assets/Chess_wr.svg";
-
-  var wq = new Image();
-  wq.src = "assets/Chess_wq.svg";
-  
-  var wk = new Image();
-  wk.src = "assets/Chess_wk.svg";
-
-  var bp = new Image();
-  bp.src = "assets/Chess_bp.svg";
-
-  var bn = new Image();
-  bn.src = "assets/Chess_bn.svg";
-
-  var bb = new Image();
-  bb.src = "assets/Chess_bb.svg";
-
-  var br = new Image();
-  br.src = "assets/Chess_br.svg";
-
-  var bq = new Image();
-  bq.src = "assets/Chess_bq.svg";
-  
-  var bk = new Image();
-  bk.src = "assets/Chess_bk.svg";
-
-  var piece_imgs=[wp, wn, wb, wr, wq, wk, bp, bn, bb, br, bq, bk];
-});
 
 EM_JS(void, draw_blankboard, (),{
   let context = Module.canvas.getContext('2d');
