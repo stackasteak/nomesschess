@@ -111,6 +111,11 @@ struct global_data{
     history = std::vector<Move>(0);
   }
 
+  void reset(){
+    bb = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+    history = std::vector<Move>(0);
+  }
+
 };
 
 global_data gd();
@@ -123,8 +128,7 @@ void onForw(){ }
 
 void onNew(){ 
   //draw_blankboard();
-  global_data gd0();
-  gd = gd0;
+  gd.reset();
   draw_board(gd.bb);
 }
 
