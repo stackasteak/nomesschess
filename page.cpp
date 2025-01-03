@@ -113,6 +113,8 @@ struct global_data{
 
 };
 
+global_data gd();
+
 extern "C"{
 
 void onBack(){ }
@@ -120,9 +122,9 @@ void onBack(){ }
 void onForw(){ }
 
 void onNew(){ 
-  draw_blankboard();
-  Board bb("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
-  draw_board(bb);
+  //draw_blankboard();
+  gd = global_data();
+  draw_board(gd.bb);
 }
 
 void onLoad(){ }
