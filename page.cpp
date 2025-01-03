@@ -92,6 +92,8 @@ void draw_board(Board bb){
         case Piece::BLACKKING :
           draw_piece(12, x, y);
           break;
+        case Piece::NONE :
+          break;
 
       }
         
