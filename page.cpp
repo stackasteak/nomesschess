@@ -126,6 +126,20 @@ struct global_data{
 
 global_data gd;
 
+//callbacks
+
+EM_BOOL touchend_callback(
+    int eventType,
+    const EmscriptenTouchEvent *event,
+    void *ud
+) {
+    global_data* userData = static_cast<global_data*>(ud);
+
+    return EM_TRUE;
+}
+
+//exported functions
+
 extern "C"{
 
 void onBack(){ }
