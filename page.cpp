@@ -123,7 +123,8 @@ void onForw(){ }
 
 void onNew(){ 
   //draw_blankboard();
-  gd = global_data();
+  global_data gd0();
+  gd = gd0;
   draw_board(gd.bb);
 }
 
