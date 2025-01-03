@@ -120,7 +120,7 @@ struct global_data{
 
 };
 
-global_data gd();
+global_data gd;
 
 extern "C"{
 
