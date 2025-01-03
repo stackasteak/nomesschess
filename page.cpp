@@ -107,10 +107,13 @@ void draw_board(Board bb){
 struct global_data{
   std::vector<Move> history;
   Board bb;
+  bool moving;
+  Square movefrom;
 
   global_data(){
     bb = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     history = std::vector<Move>(0);
+    moving = false;
   };
 
   void reset(){
