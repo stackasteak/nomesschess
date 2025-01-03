@@ -119,6 +119,7 @@ struct global_data{
   void reset(){
     bb = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     history = std::vector<Move>(0);
+    moving=false;
   };
 
 };
