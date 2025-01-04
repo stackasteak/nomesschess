@@ -170,7 +170,11 @@ EM_BOOL touchend_callback(
     int ii = userData->iselect(event->touches[0].clientX );
     int jj = userData->iselect(event->touches[0].clientY );
 
-    draw_highlight(ii,jj);
+    auto sq = Square(File(ii), Rank(7-jj));
+    auto pp = userData->bb.at<Piece>(sq).internal();
+    if(ii<8 && jj<8 && pp!= Piece::NONE){
+      draw_highlight(ii,jj);
+    }
   
     return EM_TRUE;
 }
