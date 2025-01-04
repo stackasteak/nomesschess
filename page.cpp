@@ -196,6 +196,7 @@ EM_BOOL touchend_callback(
         }
         else{
           ud->moving = false;
+          draw_board(ud->bb);
         }
       }
     }
