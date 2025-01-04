@@ -175,9 +175,9 @@ EM_BOOL touchend_callback(
     int jj = ud->iselect(event->touches[0].clientY );
 
     auto sq = Square(File(ii), Rank(7-jj));
-    auto pp = ud->bb.at<Piece>(sq).internal();
+    auto pp = ud->bb.at<Piece>(sq);
     if(!(ud->moving)){
-      if(ii<8 && jj<8  && pp!= Piece::NONE && pp.color()==ud->bb.sideToMove()){
+      if(ii<8 && jj<8  && pp.internal()!= Piece::NONE && pp.color()==ud->bb.sideToMove()){
         draw_highlight(ii,jj);
         ud->movefrom = sq;
         ud->moving = true;
