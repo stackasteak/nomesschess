@@ -170,6 +170,7 @@ EM_BOOL touchend_callback(
     int ii = userData->iselect(event->touches[0].clientX );
     int jj = userData->iselect(event->touches[0].clientY );
 
+    draw_highlight(ii,jj);
   
     return EM_TRUE;
 }
@@ -198,12 +199,12 @@ int main (){
 
   //float ss = redraw(nx,ny);
   
-  //emscripten_set_touchend_callback(
-  //      "canvas",
-  //      static_cast<void*>(&as),
-  //      1,
-  //      touchend_callback
-  //  );
+  emscripten_set_touchend_callback(
+        "canvas",
+        static_cast<void*>(&gd),
+        1,
+        touchend_callback
+  );
 
   //emscripten_set_main_loop_arg(mainloop, static_cast<void*>(&as), 1, false);
   //preload_pieces();
