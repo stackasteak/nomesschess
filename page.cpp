@@ -183,6 +183,7 @@ EM_BOOL touchend_callback(
         ud->moving = true;
         
       }
+    }
     else{
       if(ii<8 && jj<8){
         Move mtry = Move::make<Move::NORMAL>(ud->movefrom, sq);
