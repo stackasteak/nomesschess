@@ -1,6 +1,7 @@
 #include <emscripten.h>
 #include <emscripten/html5.h>
 #include <vector>
+#include <algorithm>
 #include <stdio.h>
 #include "nmc/nmc.hpp"
 #include "nmc/chess.hpp"
@@ -129,7 +130,7 @@ struct global_data{
   Board bb;
   bool moving;
   Square movefrom;
-  Movelist legalmovesfrom;
+  Movelist lms;
 
   float sqsize;
 
@@ -137,12 +138,14 @@ struct global_data{
     bb = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     history = std::vector<Move>(0);
     moving = false;
+    movegen::legalmoves<MoveGenType::ALL>(lms, bb);
   };
 
   void reset(){
     bb = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     history = std::vector<Move>(0);
     moving=false;
+    movegen::legalmoves<MoveGenType::ALL>(lms, bb);
   };
 
 int iselect(float x){
@@ -165,24 +168,31 @@ global_data gd;
 EM_BOOL touchend_callback(
     int eventType,
     const EmscriptenTouchEvent *event,
-    void *ud
+    void *userData
 ) {
-    global_data* userData = static_cast<global_data*>(ud);
-    int ii = userData->iselect(event->touches[0].clientX );
-    int jj = userData->iselect(event->touches[0].clientY );
+    global_data* ud = static_cast<global_data*>(userData);
+    int ii = ud->iselect(event->touches[0].clientX );
+    int jj = ud->iselect(event->touches[0].clientY );
 
     auto sq = Square(File(ii), Rank(7-jj));
-    auto pp = userData->bb.at<Piece>(sq).internal();
-    if(!(userData->moving)){
+    auto pp = ud->bb.at<Piece>(sq).internal();
+    if(!(ud->moving)){
       if(ii<8 && jj<8  && pp!= Piece::NONE){
         draw_highlight(ii,jj);
-        userData->movefrom = sq;
-        userData->moving = true;
-        //generate legal moves
-        movegen::legalmoves<MoveGenType::ALL>(userData->legalmoveslist, userData->bb);
+        ud->movefrom = sq;
+        ud->moving = true;
+        
       }
     else{
       if(ii<8 && jj<8){
+        Move mtry = Move::make<Move::NORMAL>(ud->movefrom, sq);
+        if(std::find(ud->lms.begin(), ud->lms.end(), mtry) != ud->lms.end()){
+          ud->moving = false;
+          ud->bb.makeMove(mtry);
+          draw_board(ud->bb);
+          //generate legal moves
+          movegen::legalmoves<MoveGenType::ALL>(ud->lms, ud->bb);
+        }
       }
     }
   
