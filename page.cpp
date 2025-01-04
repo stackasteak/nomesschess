@@ -199,7 +199,7 @@ int main (){
   //emscripten_set_main_loop_arg(mainloop, static_cast<void*>(&as), 1, false);
   //preload_pieces();
   draw_blankboard();
-  gd.sqsize = stone_size();
+  gd.sqsize = square_size();
   //Board bb("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
   //draw_board(bb);
   return 0;
