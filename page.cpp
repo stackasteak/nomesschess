@@ -39,6 +39,14 @@ EM_JS(void, draw_blankboard, (),{
 
 });
 
+EM_JS(float, square_size, (),{
+  let context = Module.canvas.getContext('2d');
+  let width = Module.canvas.width ;//= window.innerWidth;
+  let sqsize = width/8;
+
+  return sqsize;
+});
+
 EM_JS(void, draw_piece, (int pp, int x, int y), {
   let context = Module.canvas.getContext('2d');
   let width = Module.canvas.width ;//= window.innerWidth;
@@ -110,6 +118,8 @@ struct global_data{
   bool moving;
   Square movefrom;
 
+  float sqsize;
+
   global_data(){
     bb = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     history = std::vector<Move>(0);
@@ -125,7 +135,7 @@ struct global_data{
 int iselect(float x){
     int ans=8;
     for(int ii=0; ii<8; ii++){
-      if(x < (ii+1)*stonesize){
+      if(x < (ii+1)*sqsize){
         ans = ii;
         break;
       }
@@ -185,6 +195,7 @@ int main (){
   //emscripten_set_main_loop_arg(mainloop, static_cast<void*>(&as), 1, false);
   //preload_pieces();
   draw_blankboard();
+  gd.sqsize = stone_size();
   //Board bb("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
   //draw_board(bb);
   return 0;
