@@ -194,6 +194,9 @@ EM_BOOL touchend_callback(
           //generate legal moves
           movegen::legalmoves<movegen::MoveGenType::ALL>(ud->lms, ud->bb);
         }
+        else{
+          ud->moving = false;
+        }
       }
     }
   
