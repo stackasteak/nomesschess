@@ -62,7 +62,8 @@ EM_JS(void, draw_highlight, (int ii, int jj), {
   let width = Module.canvas.width ;//= window.innerWidth;
   let sqsize = width/8;
 
-  context.rect();
+  context.beginPath();
+  context.rect(ii*sqsize,jj*sqsize,sqsize,sqsize);
   context.stroke();
 
 });
