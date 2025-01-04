@@ -138,14 +138,14 @@ struct global_data{
     bb = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     history = std::vector<Move>(0);
     moving = false;
-    movegen::legalmoves<MoveGenType::ALL>(lms, bb);
+    movegen::legalmoves<movegen::MoveGenType::ALL>(lms, bb);
   };
 
   void reset(){
     bb = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     history = std::vector<Move>(0);
     moving=false;
-    movegen::legalmoves<MoveGenType::ALL>(lms, bb);
+    movegen::legalmoves<movegen::MoveGenType::ALL>(lms, bb);
   };
 
 int iselect(float x){
@@ -192,7 +192,7 @@ EM_BOOL touchend_callback(
           ud->bb.makeMove(mtry);
           draw_board(ud->bb);
           //generate legal moves
-          movegen::legalmoves<MoveGenType::ALL>(ud->lms, ud->bb);
+          movegen::legalmoves<movegen::MoveGenType::ALL>(ud->lms, ud->bb);
         }
       }
     }
