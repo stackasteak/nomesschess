@@ -129,6 +129,7 @@ struct global_data{
   Board bb;
   bool moving;
   Square movefrom;
+  Movelist legalmovesfrom;
 
   float sqsize;
 
@@ -172,8 +173,15 @@ EM_BOOL touchend_callback(
 
     auto sq = Square(File(ii), Rank(7-jj));
     auto pp = userData->bb.at<Piece>(sq).internal();
-    if(ii<8 && jj<8 && pp!= Piece::NONE){
-      draw_highlight(ii,jj);
+    if(!(userData->moving)){
+      if(ii<8 && jj<8  && pp!= Piece::NONE){
+        draw_highlight(ii,jj);
+        userData->movefrom = sq;
+        //generate legal moves
+      }
+    else{
+      if(ii<8 && jj<8){
+      }
     }
   
     return EM_TRUE;
