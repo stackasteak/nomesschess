@@ -58,6 +58,13 @@ EM_JS(void, draw_piece, (int pp, int x, int y), {
 });
 
 EM_JS(void, draw_highlight, (int ii, int jj), {
+  let context = Module.canvas.getContext('2d');
+  let width = Module.canvas.width ;//= window.innerWidth;
+  let sqsize = width/8;
+
+  context.rect();
+  context.stroke();
+
 });
 
 void draw_board(Board bb){
