@@ -155,7 +155,8 @@ EM_BOOL touchend_callback(
     void *ud
 ) {
     global_data* userData = static_cast<global_data*>(ud);
-    int ii = userData->dsp->iselect(event->touches[0].clientX);
+    int ii = userData->iselect(event->touches[0].clientX );
+    int jj = userData->iselect(event->touches[0].clientY );
 
   
     return EM_TRUE;
