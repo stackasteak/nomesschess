@@ -57,6 +57,9 @@ EM_JS(void, draw_piece, (int pp, int x, int y), {
   
 });
 
+EM_JS(void, draw_highlight, (int ii, int jj), {
+});
+
 void draw_board(Board bb){
   draw_blankboard();
   for(int x=0; x<8; x++){
