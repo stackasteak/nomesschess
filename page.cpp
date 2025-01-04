@@ -177,7 +177,9 @@ EM_BOOL touchend_callback(
       if(ii<8 && jj<8  && pp!= Piece::NONE){
         draw_highlight(ii,jj);
         userData->movefrom = sq;
+        userData->moving = true;
         //generate legal moves
+        movegen::legalmoves<MoveGenType::ALL>(userData->legalmoveslist, userData->bb);
       }
     else{
       if(ii<8 && jj<8){
