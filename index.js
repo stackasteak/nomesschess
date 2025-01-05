@@ -895,7 +895,7 @@ function alert_float(x) { alert(x); }
 function draw_blankboard() { let context = Module.canvas.getContext('2d'); let width = Module.canvas.width = window.innerWidth; let height = Module.canvas.height = window.innerWidth+30; context.fillStyle = 'rgb(0,0,0)'; context.fillRect(0,0,width,height); let sqsize = width/8; for(let ii=0; ii<8; ii++){ for(let jj=0; jj<8; jj++){ if ((ii+jj)%2==0 ) { context.fillStyle = 'rgb(214,155,39)'; } else{ context.fillStyle = 'rgb(135,109,19)'; } context.fillRect(ii*sqsize,jj*sqsize,sqsize,sqsize); } } }
 function square_size() { let context = Module.canvas.getContext('2d'); let width = Module.canvas.width ; let sqsize = width/8; return sqsize; }
 function draw_piece(pp,x,y) { let context = Module.canvas.getContext('2d'); let width = Module.canvas.width ; let sqsize = width/8; context.drawImage(piece_imgs[pp-1],x*sqsize,y*sqsize,sqsize,sqsize); }
-function draw_highlight(ii,jj) { let context = Module.canvas.getContext('2d'); let width = Module.canvas.width ; let sqsize = width/8; context.strokeStyle = "yellow"; context.beginPath(); context.rect(ii*sqsize,jj*sqsize,sqsize,sqsize); context.stroke(); }
+function draw_highlight(ii,jj) { let context = Module.canvas.getContext('2d'); let width = Module.canvas.width ; let sqsize = width/8; context.strokeStyle = 'rgb(255,147,255)'; context.beginPath(); context.rect(ii*sqsize,jj*sqsize,sqsize,sqsize); context.stroke(); }
 
 // end include: preamble.js
 
