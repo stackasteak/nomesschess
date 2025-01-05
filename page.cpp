@@ -207,8 +207,8 @@ EM_BOOL touchend_callback(
             ud->history.push_back(*mfound);
           }
           else{
-            ud->history.resize(ud->movenum-1);
-            ud->history.push_back(*mfound);
+            //ud->history.resize(ud->movenum-1);
+            //ud->history.push_back(*mfound);
           }
             
           //generate legal moves
