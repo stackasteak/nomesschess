@@ -199,6 +199,7 @@ EM_BOOL touchend_callback(
           ud->moving = false;
           ud->bb.makeMove(*mfound);
           draw_board(ud->bb);
+          ud->history.push_back(*mfound);
           //generate legal moves
           movegen::legalmoves<movegen::MoveGenType::ALL>(ud->lms, ud->bb);
         }
