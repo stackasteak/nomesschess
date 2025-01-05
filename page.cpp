@@ -203,7 +203,14 @@ EM_BOOL touchend_callback(
           ud->bb.makeMove(*mfound);
           draw_board(ud->bb);
           ud->movenum++;
-          ud->history.push_back(*mfound);
+          if(ud->movenum > ud->history.size()){
+            ud->history.push_back(*mfound);
+          }
+          else{
+            ud->history.resize(ud->movenum-1);
+            ud->history.push_back(*mfound);
+          }
+            
           //generate legal moves
           movegen::legalmoves<movegen::MoveGenType::ALL>(ud->lms, ud->bb);
         }
