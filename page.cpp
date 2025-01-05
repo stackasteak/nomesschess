@@ -222,7 +222,10 @@ EM_BOOL touchend_callback(
 extern "C"{
 
 void onBack(){
-  gd.movenum--;
+  if(gd.movenum>0 ){
+    gd.movenum--;
+    gd.bb.unmakeMove(gd.history[movenum]);
+  }
 }
 
 void onForw(){ }
