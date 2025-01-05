@@ -126,6 +126,7 @@ void draw_board(Board bb){
 //globals
 
 struct global_data{
+  int movenum;
   std::vector<Move> history;
   Board bb;
   bool moving;
@@ -135,6 +136,7 @@ struct global_data{
   float sqsize;
 
   global_data(){
+    movenum=0;
     bb = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     history = std::vector<Move>(0);
     moving = false;
@@ -142,6 +144,7 @@ struct global_data{
   };
 
   void reset(){
+    movenum=0;
     bb = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     history = std::vector<Move>(0);
     moving=false;
@@ -199,6 +202,7 @@ EM_BOOL touchend_callback(
           ud->moving = false;
           ud->bb.makeMove(*mfound);
           draw_board(ud->bb);
+          ud->movenum++;
           ud->history.push_back(*mfound);
           //generate legal moves
           movegen::legalmoves<movegen::MoveGenType::ALL>(ud->lms, ud->bb);
@@ -217,7 +221,9 @@ EM_BOOL touchend_callback(
 
 extern "C"{
 
-void onBack(){ }
+void onBack(){
+  gd.movenum--;
+}
 
 void onForw(){ }
 
