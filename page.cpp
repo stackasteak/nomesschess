@@ -207,8 +207,8 @@ EM_BOOL touchend_callback(
             ud->history.push_back(*mfound);
           }
           else{
-            //ud->history.resize(ud->movenum-1);
-            //ud->history.push_back(*mfound);
+            ud->history.resize(ud->movenum-1);
+            ud->history.push_back(*mfound);
           }
             
           //generate legal moves
@@ -233,6 +233,7 @@ void onBack(){
     gd.movenum--;
     gd.bb.unmakeMove(gd.history[gd.movenum]);
     draw_board(gd.bb);
+    movegen::legalmoves<movegen::MoveGenType::ALL>(gd.lms, gd.bb);
   }
 }
 
@@ -241,6 +242,7 @@ void onForw(){
     gd.movenum++;
     gd.bb.makeMove(gd.history[gd.movenum-1]);
     draw_board(gd.bb);
+    movegen::legalmoves<movegen::MoveGenType::ALL>(gd.lms, gd.bb);
   }
 }
 
