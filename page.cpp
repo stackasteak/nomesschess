@@ -188,8 +188,8 @@ EM_BOOL touchend_callback(
       if(ii<8 && jj<8){
         Move* mfound;
         bool found= false;
-        for(auto mm=ud->lms.begin(); mm< ud->lms.end; mm++){
-          if(mm->from() == ud->movefrom && mm->to ==sq){
+        for(auto mm=ud->lms.begin(); mm< ud->lms.end(); mm++){
+          if(mm->from() == ud->movefrom && mm->to() ==sq){
             found=true;
             mfound=mm;
             break;
