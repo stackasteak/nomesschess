@@ -186,10 +186,18 @@ EM_BOOL touchend_callback(
     }
     else{
       if(ii<8 && jj<8){
-        Move mtry = Move::make<Move::NORMAL>(ud->movefrom, sq);
-        if(std::find(ud->lms.begin(), ud->lms.end(), mtry) != ud->lms.end()){
+        Move* mfound;
+        bool found= false;
+        for(auto mm=ud->lms.begin(); mm< ud->lms.end; mm++){
+          if(mm->from() == ud->movefrom && mm->to ==sq){
+            found=true;
+            mfound=mm;
+            break;
+          }
+        }
+        if(found){
           ud->moving = false;
-          ud->bb.makeMove(mtry);
+          ud->bb.makeMove(*mfound);
           draw_board(ud->bb);
           //generate legal moves
           movegen::legalmoves<movegen::MoveGenType::ALL>(ud->lms, ud->bb);
