@@ -228,7 +228,12 @@ void onBack(){
   }
 }
 
-void onForw(){ }
+void onForw(){
+  if(gd.movenum < gd.history.size() ){
+    gd.movenum++;
+    gd.bb.makeMove(gd.history[movenum-1]);
+  }
+}
 
 void onNew(){ 
   //draw_blankboard();
