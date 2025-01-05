@@ -225,6 +225,7 @@ void onBack(){
   if(gd.movenum>0 ){
     gd.movenum--;
     gd.bb.unmakeMove(gd.history[gd.movenum]);
+    draw_board(gd.bb);
   }
 }
 
@@ -232,6 +233,7 @@ void onForw(){
   if(gd.movenum < gd.history.size() ){
     gd.movenum++;
     gd.bb.makeMove(gd.history[gd.movenum-1]);
+    draw_board(gd.bb);
   }
 }
 
