@@ -262,7 +262,7 @@ int main (){
 
   //float ss = redraw(nx,ny);
   
-  emscripten_set_touchend_callback(
+  emscripten_set_touchstart_callback(
         "canvas",
         static_cast<void*>(&gd),
         1,
