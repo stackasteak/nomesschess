@@ -63,7 +63,7 @@ EM_JS(void, draw_highlight, (int ii, int jj), {
   let width = Module.canvas.width ;//= window.innerWidth;
   let sqsize = width/8;
 
-  context.strokeStyle = "yellow";
+  context.strokeStyle = 'rgb(255,147,255)';
   context.beginPath();
   context.rect(ii*sqsize,jj*sqsize,sqsize,sqsize);
   context.stroke();
