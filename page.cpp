@@ -224,14 +224,14 @@ extern "C"{
 void onBack(){
   if(gd.movenum>0 ){
     gd.movenum--;
-    gd.bb.unmakeMove(gd.history[movenum]);
+    gd.bb.unmakeMove(gd.history[gd.movenum]);
   }
 }
 
 void onForw(){
   if(gd.movenum < gd.history.size() ){
     gd.movenum++;
-    gd.bb.makeMove(gd.history[movenum-1]);
+    gd.bb.makeMove(gd.history[gd.movenum-1]);
   }
 }
 
