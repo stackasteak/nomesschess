@@ -1187,16 +1187,19 @@ async function createWasm() {
         return 0;
       },
   removeSingleHandler(eventHandler) {
-        for (var [i, handler] of JSEvents.eventHandlers.entries()) {
+        let success = false;
+        for (let i = 0; i < JSEvents.eventHandlers.length; ++i) {
+          const handler = JSEvents.eventHandlers[i];
           if (handler.target === eventHandler.target
             && handler.eventTypeId === eventHandler.eventTypeId
             && handler.callbackfunc === eventHandler.callbackfunc
             && handler.userData === eventHandler.userData) {
-            JSEvents._removeHandler(i);
-            return 0;
+            // in some very rare cases (ex: Safari / fullscreen events), there is more than 1 handler (eventTypeString is different)
+            JSEvents._removeHandler(i--);
+            success = true;
           }
         }
-        return -5;
+        return success ? 0 : -5;
       },
   getNodeNameForTarget(target) {
         if (!target) return '';
@@ -1222,10 +1225,10 @@ async function createWasm() {
     };
   
   /** @type {Object} */
-  var specialHTMLTargets = [0, typeof document != 'undefined' ? document : 0, typeof window != 'undefined' ? window : 0];
+  var specialHTMLTargets = [0, globalThis.document ?? 0, globalThis.window ?? 0];
   var findEventTarget = (target) => {
       target = maybeCStringToJsString(target);
-      var domElement = specialHTMLTargets[target] || (typeof document != 'undefined' ? document.querySelector(target) : null);
+      var domElement = specialHTMLTargets[target] || globalThis.document?.querySelector(target);
       return domElement;
     };
   
